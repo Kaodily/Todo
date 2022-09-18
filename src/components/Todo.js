@@ -1,5 +1,5 @@
 import del from '../images/icon-cross.svg'
-const Todo = ({ arr }) => {
+const Todo = ({ arr, onDelete, handleChange, input }) => {
     let m = arr.length >= 2 ? 'items' : 'item'
     return (
         <section className="todolist">
@@ -7,11 +7,11 @@ const Todo = ({ arr }) => {
                 return (
                     <div key={index} className='lists'>
                         <div>
-                        <input type="checkbox" id={item} />
-                        <label htmlFor={item}>{item}</label>
+                        <input onChange={handleChange} type="checkbox" name='isTrue' checked={input.isTrue} id={item} />
+                        <label style={input.isTrue ? {textDecoration:'line-through',color:'hsl(236, 9%, 61%)'} : null} htmlFor={item}>{item}</label>
                         </div>
                         <div>
-                        <img src={del} alt="delete" />
+                        <img src={del} onClick={() => onDelete(item)} alt="delete" />
                         </div>
                     </div>
                 )

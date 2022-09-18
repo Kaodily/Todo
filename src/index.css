@@ -14,6 +14,9 @@ body {
   padding: 25px 30px;
   height:200px;
   background-image:url('./images/bg-mobile-light.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .Header h1{
   letter-spacing: 5px;
@@ -24,6 +27,7 @@ body {
   width: 15px;
   padding-top: 2px;
 }
+
 .input{
   width: 330px;
   height: 40px;
@@ -34,9 +38,11 @@ body {
   margin-bottom: 20px;
   font-size: 12px;
 }
+
 label{
   margin-left: 6px;
   font-size: 14px;
+  color: hsl(233, 14%, 35%);
 }
 .todolist{
   background-color: white;
@@ -51,10 +57,34 @@ justify-content: space-between;
 margin-bottom: 20px;
 padding: 10px 15px;
 font-size: 12px;
+color:hsl(236, 9%, 61%)
 }
 .lists{
   padding:15px;
   border-bottom: 1px solid hsl(0, 0%, 75%);
   display: flex;
   justify-content: space-between;
+}
+.filtered{
+  width: 330px;
+  height: 45px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+.filtered p {
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: hsl(233, 14%, 35%);
+
+}
+.filtered p:hover {
+color: hsl(220, 98%, 61%);
+cursor: pointer;
+
 }
