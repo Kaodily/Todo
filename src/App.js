@@ -7,10 +7,10 @@ import './App.css';
 
 function App() {
   const [input, setInput] = useState({
-    todoInput: '',
-    isTrue:false
+    todoInput: ''
   })
   const [arr,setArr] = useState([])
+  const [styled,setStyled] = useState({})
   const handleChange = (e) => {
     const {name,type,value,checked} = e.target
     setInput(prev => {
@@ -33,6 +33,21 @@ function App() {
   const onDelete = (id) => {
    setArr(prev => prev.filter(item => item !== id))
   }
+  const checkboxHandleChange = (id) => {
+    if (id.current.checked === true) {
+      setStyled(prev => {
+        return {
+        textDecoration: 'line-through',color: 'hsl(236, 9%, 61%)'
+        }
+
+   })
+    } else {
+      
+      setStyled({})
+    }
+       
+
+  }
   // const filteredhandleClick = (status) => {
   //   if (status === 'all') {
   //     setArr(prev => [...prev])
@@ -46,7 +61,7 @@ function App() {
       <Header />
       <div className="inputField">
       <Input handleSubmit={handleSubmit} handleChange={handleChange} input={input} />
-        <Todo arr={arr} onDelete={onDelete} handleChange={handleChange} input={input}  />
+        <Todo arr={arr} onDelete={onDelete} handleChange={handleChange} styled={styled} checkboxHandleChange={checkboxHandleChange} input={input}  />
         <Filtered />
       </div>
     </Fragment>

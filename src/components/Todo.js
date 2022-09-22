@@ -1,5 +1,7 @@
+import React,{useRef} from 'react'
 import del from '../images/icon-cross.svg'
-const Todo = ({ arr, onDelete, handleChange, input }) => {
+const Todo = ({ arr, onDelete, handleChange, input,checkboxHandleChange,styled }) => {
+     let t = useRef()
     let m = arr.length >= 2 ? 'items' : 'item'
     return (
         <section className="todolist">
@@ -7,8 +9,8 @@ const Todo = ({ arr, onDelete, handleChange, input }) => {
                 return (
                     <div key={index} className='lists'>
                         <div>
-                        <input onChange={handleChange} type="checkbox" name='isTrue' checked={input.isTrue} id={item} />
-                        <label style={input.isTrue ? {textDecoration:'line-through',color:'hsl(236, 9%, 61%)'} : null} htmlFor={item}>{item}</label>
+                        <input ref={t} onChange={()=> checkboxHandleChange(t)} type="checkbox" id={item} />
+                        <label style={styled} htmlFor={item}>{item}</label>
                         </div>
                         <div>
                         <img src={del} onClick={() => onDelete(item)} alt="delete" />

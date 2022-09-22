@@ -11,7 +11,7 @@ body {
 .Header{
   display: flex;
   justify-content: space-between;
-  padding: 25px 30px;
+  padding: 25px 322px;
   height:200px;
   background-image:url('./images/bg-mobile-light.jpg');
   background-repeat: no-repeat;
